@@ -14,7 +14,7 @@ parser.add_argument('--save_dir', default='release_model/', type=str)
 
 # Test setting
 parser.add_argument('--data_name', default='Youtube-VI', type=str, help='Youtube-VI or DAVIS_shadow or DAVIS')
-parser.add_argument('--test_data_root', default='../STTN/datasets/youtube-vos/', type=str)
+parser.add_argument('--test_data_root', default='./test/', type=str)
 parser.add_argument('--davis', action='store_true', help='For object removal')
 parser.add_argument('--test_w', default=432, type=int)
 parser.add_argument('--test_h', default=240, type=int)
