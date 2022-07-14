@@ -174,10 +174,6 @@ def readFlow(fn):
             return np.resize(data, (int(h), int(w), 2))
 
 
-def epe_measure(src, tar, p=2):
-    return torch.norm(tar-src,p=2,dim=1).mean()
-
-
 def psnr_measure(src ,tar, shave_border=0):
 
     def psnr(y_true,y_pred, shave_border=4):
@@ -413,7 +409,6 @@ def find_ref_indexs(tar_indexs=0, T=10, stride=1):
 
 # for finding nearst key frame.
 def find_ref_key_indexs(tar_indexs, key_indexs):
-    # 주어진 idx 로 부터 가까운 key_idx를 순서대로 나열
     ref_indexs = []
     ref_len = []
 
@@ -431,33 +426,6 @@ def find_ref_key_indexs(tar_indexs, key_indexs):
     return ref_indexs, min(ref_len)
 
 
-
-
-
-def resize_flow(flow, shape):
-
-    _,_,h,w = flow.size()
-
-    h_ratio, w_ratio = shape[0]/h, shape[1]/w 
-    resized_flow =  F.interpolate(flow, size=shape)
-
-    resized_flow[:,0] = resized_flow[:,0] * w_ratio
-    resized_flow[:,1] = resized_flow[:,1] * h_ratio
-
-    return resized_flow
-        
-def dilation(image, ksize=3, iter=1):
-    result = image
-    for i in range(iter):
-        image_pad = F.pad(result.detach(), [ksize//2, ksize//2, ksize//2, ksize//2], mode='constant', value=0)
-        # Unfold the image to be able to perform operation on neighborhoods
-        image_unfold = F.unfold(image_pad, kernel_size=(ksize,ksize))
-        sums = image_unfold 
-        # Take maximum over the neighborhood
-        result, _ = sums.max(dim=1)
-        # Reshape the image to recover initial shape
-        result = torch.reshape(result, image.shape)
-    return result
 
     
 def find_key_index(masks, flowFs, flowBs, stride=3, key_indexs = None):
@@ -585,3 +553,31 @@ def add_stride_key_index(T, key_indexs, key_stride=3):
         key_indexs.append(i)
     
     return key_indexs
+
+
+
+def resize_flow(flow, shape):
+
+    _,_,h,w = flow.size()
+
+    h_ratio, w_ratio = shape[0]/h, shape[1]/w 
+    resized_flow =  F.interpolate(flow, size=shape)
+
+    resized_flow[:,0] = resized_flow[:,0] * w_ratio
+    resized_flow[:,1] = resized_flow[:,1] * h_ratio
+
+    return resized_flow
+        
+        
+def dilation(image, ksize=3, iter=1):
+    result = image
+    for i in range(iter):
+        image_pad = F.pad(result.detach(), [ksize//2, ksize//2, ksize//2, ksize//2], mode='constant', value=0)
+        # Unfold the image to be able to perform operation on neighborhoods
+        image_unfold = F.unfold(image_pad, kernel_size=(ksize,ksize))
+        sums = image_unfold 
+        # Take maximum over the neighborhood
+        result, _ = sums.max(dim=1)
+        # Reshape the image to recover initial shape
+        result = torch.reshape(result, image.shape)
+    return result
