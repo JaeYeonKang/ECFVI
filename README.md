@@ -11,6 +11,41 @@ Jaeyeon Kang, Seoung Wug Oh, and Seon Joo Kim. "Error Compensation Framework for
 
     Python>=3.6.8, Pytorch=1.6.1, CUDA version>= 10.1 
 
+
+ckstart (Test models)
+
+1. Clone this github repo
+
+       git clone https://github.com/JaeYeonKang/ECFVI
+       cd ECFVI
+        
+ 2. Place your test dataset 
+        
+      frame_path = data_path + 'frames/'
+            ex) data_path + 'frames/' + 'video1_name' 
+                data_path + 'frames/' + 'video2_name'
+      mask_path = data_path + 'masks/'  
+        
+ 
+ 3. Download our pretrained models from [link](https://drive.google.com/file/d/1SGU5RIIXzIdInLDQRQiZrU517BbQdSzX/view?usp=sharing). Then, place the weights in ./pretrained_weights
+ 
+ 4. Run demo
+           
+        CUDA_VISIBLE_DEVICES=0 python main.py --model network --trainer core.evaluation --version $SAVE_DIR$ \
+        --test_data_name $DATA_NAME$ --test_data_root $DATA_DIR$ --mask_mode $MASK_MODE$ 
+        
+      + DATA_NAME : name of test dataset 
+      + DATA_DIR : path to test dataset
+      + SAVE_DIR : path to save results
+     
+      + MASK_MODE : for Youtube-VI dataset, mode:0 -> moving mask, mode:1 -> stationary mask
+ 
+      For example,
+        # For moving mask on Youtube-VI
+        CUDA_VISIBLE_DEVICES=0 python main.py --model network --trainer core.evaluation --version DEMO \
+        --test_data_name Youtube-VI --test_data_root ./test --mask_mode 0
+        
+        
  ## Youtube Video Inpainting (Youtube-VI) dataset
  
 
