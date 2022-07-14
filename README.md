@@ -26,7 +26,6 @@ Jaeyeon Kang, Seoung Wug Oh, and Seon Joo Kim. "Error Compensation Framework for
       
             ex) data_path + 'frames/' + 'video1_name' 
                 data_path + 'frames/' + 'video2_name'
-                
       mask_path = data_path + 'masks/'  
         
  
