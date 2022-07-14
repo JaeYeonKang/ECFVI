@@ -12,7 +12,7 @@ Jaeyeon Kang, Seoung Wug Oh, and Seon Joo Kim. "Error Compensation Framework for
     Python>=3.6.8, Pytorch=1.6.1, CUDA version>= 10.1 
 
 
-ckstart (Test models)
+## Quickstart (DEMO)
 
 1. Clone this github repo
 
