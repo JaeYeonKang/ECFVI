@@ -501,7 +501,7 @@ class Trainer():
 
     
             ############################################
-            ########### Step 2 : Inpaniting ############
+            ########### Step 2 : Inpainting ############
             ############################################
             
             
@@ -524,7 +524,7 @@ class Trainer():
             
 
             ############################################
-            ###### Step 2.2 : Inpanint key frames ######
+            ###### Step 2.2 : Inpaint key frames ######
             ############################################
             
             zero_mask = torch.zeros_like(masks[0:1])
@@ -552,7 +552,7 @@ class Trainer():
                     
 
             ############################################
-            #### Step 2.3 : Inpanint non-key frames ####
+            #### Step 2.3 : Inpaint non-key frames ####
             ############################################
             
             # Find index of non-key frames
