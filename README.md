@@ -20,7 +20,7 @@ Jaeyeon Kang, Seoung Wug Oh, and Seon Joo Kim. "Error Compensation Framework for
        cd ECFVI
         
         
- 2. Place your test dataset 
+ 2. Place your test dataset on ./test/
         
       frame_path = data_path + 'frames/'
             ex) data_path + 'frames/' + 'video1_name' 
@@ -54,4 +54,4 @@ Jaeyeon Kang, Seoung Wug Oh, and Seon Joo Kim. "Error Compensation Framework for
  ## Youtube Video Inpainting (Youtube-VI) dataset
  
 
-You can download our Youtube-VI dataset from [link](https://drive.google.com/file/d/1x2IGdIIEMHQe-Bkxs7op-C08XvcXjO3f/view?usp=sharing)
+You can download our Youtube-VI dataset from [link](https://drive.google.com/file/d/1aWXbSkzppXhlwlkVctsYrjm5pXDUvOAe/view?usp=sharing)
