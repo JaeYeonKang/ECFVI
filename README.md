@@ -54,3 +54,9 @@ Jaeyeon Kang, Seoung Wug Oh, and Seon Joo Kim. "Error Compensation Framework for
  
 
 You can download our Youtube-VI dataset from [link](https://drive.google.com/file/d/1aWXbSkzppXhlwlkVctsYrjm5pXDUvOAe/view?usp=sharing)
+
+
+## Citation
+
+If you use any part of this code in your research, please cite our paper
+
