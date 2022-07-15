@@ -22,9 +22,9 @@ Jaeyeon Kang, Seoung Wug Oh, and Seon Joo Kim. "Error Compensation Framework for
         
  2. Place your test dataset on ./test
         
-      frame_path = data_path + 'frames/'       
-      &nbsp;&nbsp;&nbsp;&nbsp; ex) frame_path + 'frames/' + 'video_name'   
-      mask_path = data_path + 'masks/'  
+      frame_path = $DATA_DIR$ + $DATA_NAME$ + 'frames/'       
+      &nbsp;&nbsp;&nbsp;&nbsp; ex) ./test/Youtube-VI/frames/' + %VIDEO_NAME%   
+      mask_path = $DATA_DIR$ + $DATA_NAME$ + 'masks/'  
         
  
  3. Download our pretrained models from [link](https://drive.google.com/file/d/1SGU5RIIXzIdInLDQRQiZrU517BbQdSzX/view?usp=sharing). Then, place the weights in ./pretrained_weights
