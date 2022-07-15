@@ -22,7 +22,7 @@ Jaeyeon Kang, Seoung Wug Oh, and Seon Joo Kim. "Error Compensation Framework for
         
  2. Place your test dataset on ./test
         
-      frame_path = &#36;DATA_DIR&#36; + $DATA_NAME$ + 'frames/'       
+      frame_path = '$'DATA_DIR&#36; + $DATA_NAME$ + 'frames/'       
       &nbsp;&nbsp;&nbsp;&nbsp; ex) ./test/Youtube-VI/frames/' + %VIDEO_NAME%   
       mask_path = $DATA_DIR$ + $DATA_NAME$ + 'masks/'  
         
